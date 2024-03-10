@@ -26,37 +26,111 @@ public class PhepTinhForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        phepTinh = new javax.swing.JMenu();
+        itemCong = new javax.swing.JMenuItem();
+        itemTru = new javax.swing.JMenuItem();
+        itemNhan = new javax.swing.JMenuItem();
+        itemChia = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        itemThoat = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Phép Tính");
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setToolTipText("");
+        phepTinh.setText("Phép tính");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 669, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 513, Short.MAX_VALUE)
-        );
+        itemCong.setBackground(new java.awt.Color(100, 100, 100));
+        itemCong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PhepTinh/Add.png"))); // NOI18N
+        itemCong.setText("Phép cộng");
+        itemCong.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemCongActionPerformed(evt);
+            }
+        });
+        phepTinh.add(itemCong);
+
+        itemTru.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PhepTinh/Minus.png"))); // NOI18N
+        itemTru.setText("Phép trừ");
+        itemTru.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemTruActionPerformed(evt);
+            }
+        });
+        phepTinh.add(itemTru);
+
+        itemNhan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PhepTinh/Multiplication.png"))); // NOI18N
+        itemNhan.setText("Phép nhân");
+        itemNhan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemNhanActionPerformed(evt);
+            }
+        });
+        phepTinh.add(itemNhan);
+
+        itemChia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PhepTinh/Division.png"))); // NOI18N
+        itemChia.setText("Phép chia");
+        itemChia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemChiaActionPerformed(evt);
+            }
+        });
+        phepTinh.add(itemChia);
+
+        jMenuBar1.add(phepTinh);
+
+        jMenu4.setText("Tùy chỉnh");
+
+        itemThoat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PhepTinh/Fire Exit.png"))); // NOI18N
+        itemThoat.setText("Thoát");
+        itemThoat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemThoatActionPerformed(evt);
+            }
+        });
+        jMenu4.add(itemThoat);
+
+        jMenuBar1.add(jMenu4);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 650, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 526, Short.MAX_VALUE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void itemNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemNhanActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_itemNhanActionPerformed
+
+    private void itemChiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemChiaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itemChiaActionPerformed
+
+    private void itemTruActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemTruActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itemTruActionPerformed
+
+    private void itemCongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemCongActionPerformed
+        // TODO add your handling code here:
+        new PhepCong().setVisible(true);
+    }//GEN-LAST:event_itemCongActionPerformed
+
+    private void itemThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemThoatActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_itemThoatActionPerformed
 
     /**
      * @param args the command line arguments
@@ -94,6 +168,13 @@ public class PhepTinhForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenuItem itemChia;
+    private javax.swing.JMenuItem itemCong;
+    private javax.swing.JMenuItem itemNhan;
+    private javax.swing.JMenuItem itemThoat;
+    private javax.swing.JMenuItem itemTru;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu phepTinh;
     // End of variables declaration//GEN-END:variables
 }
