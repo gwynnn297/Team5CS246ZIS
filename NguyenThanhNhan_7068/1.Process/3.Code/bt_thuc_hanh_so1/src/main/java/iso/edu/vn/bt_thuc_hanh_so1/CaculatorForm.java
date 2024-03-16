@@ -53,8 +53,18 @@ public class CaculatorForm extends javax.swing.JFrame {
         jLabel4.setText("       Result ");
 
         btnAdd.setText("+");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
 
         btnPlus.setText("-");
+        btnPlus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPlusActionPerformed(evt);
+            }
+        });
 
         btnMultiply.setText("*");
         btnMultiply.addActionListener(new java.awt.event.ActionListener() {
@@ -64,6 +74,11 @@ public class CaculatorForm extends javax.swing.JFrame {
         });
 
         btnDivide.setText("/");
+        btnDivide.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDivideActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -156,6 +171,87 @@ public class CaculatorForm extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, e.getMessage());
 }
     }//GEN-LAST:event_btnMultiplyActionPerformed
+
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        StringBuilder sb = new StringBuilder();
+        String numl = txtFirstNumber.getText();
+        if (numl.equals("")) {
+            sb.append("First number is required!\n");
+        }
+        String num2 = txtSecondNumber.getText();
+        if (num2.equals("")) {
+            sb.append("Second number is required! \n");
+}
+        if (sb.length()>0){
+            JOptionPane.showMessageDialog(this, sb.toString());
+            return;
+        }
+         try {
+              int n1 = Integer.parseInt(numl);
+              int n2 = Integer.parseInt(num2);
+               
+              txtResult.setText("" + (n1 + n2));
+} catch (Exception e) {
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(this, e.getMessage());
+}
+    }//GEN-LAST:event_btnAddActionPerformed
+
+    private void btnPlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlusActionPerformed
+        StringBuilder sb = new StringBuilder();
+        String numl = txtFirstNumber.getText();
+        if (numl.equals("")) {
+            sb.append("First number is required!\n");
+        }
+        String num2 = txtSecondNumber.getText();
+        if (num2.equals("")) {
+            sb.append("Second number is required! \n");
+}
+        if (sb.length()>0){
+            JOptionPane.showMessageDialog(this, sb.toString());
+            return;
+        }
+         try {
+              int n1 = Integer.parseInt(numl);
+              int n2 = Integer.parseInt(num2);
+               
+              txtResult.setText("" + (n1 - n2));
+} catch (Exception e) {
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(this, e.getMessage());
+}
+    }//GEN-LAST:event_btnPlusActionPerformed
+
+    private void btnDivideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivideActionPerformed
+        StringBuilder sb = new StringBuilder();
+        String numl = txtFirstNumber.getText();
+        if (numl.equals("")) {
+            sb.append("First number is required!\n");
+        }
+        String num2 = txtSecondNumber.getText();
+        if (num2.equals("")) {
+            sb.append("Second number is required! \n");
+}
+        if (sb.length()>0){
+            JOptionPane.showMessageDialog(this, sb.toString());
+            return;
+        }
+         try {
+             
+              int n1 = Integer.parseInt(numl);
+              int n2 = Integer.parseInt(num2);
+              if(n2 == 0){
+                  txtResult.setText("loi.");
+              } 
+              else{
+                 txtResult.setText("" + (n1 / n2)); 
+              }
+              
+} catch (Exception e) {
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(this, e.getMessage());
+}
+    }//GEN-LAST:event_btnDivideActionPerformed
 
     /**
      * @param args the command line arguments
