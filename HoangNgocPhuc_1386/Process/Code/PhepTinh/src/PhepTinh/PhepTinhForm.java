@@ -26,6 +26,8 @@ public class PhepTinhForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        anhNen = new javax.swing.JLabel();
+        tieuDe = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         phepTinh = new javax.swing.JMenu();
         itemCong = new javax.swing.JMenuItem();
@@ -38,10 +40,20 @@ public class PhepTinhForm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Phép Tính");
 
+        anhNen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/logoDT-70.png"))); // NOI18N
+
+        tieuDe.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
+        tieuDe.setText("DUY TAN UNIVERSITY");
+
+        jMenuBar1.setPreferredSize(new java.awt.Dimension(144, 40));
+
         phepTinh.setText("Phép tính");
+        phepTinh.setMaximumSize(new java.awt.Dimension(73, 32767));
+        phepTinh.setMinimumSize(new java.awt.Dimension(73, 23));
+        phepTinh.setName(""); // NOI18N
 
         itemCong.setBackground(new java.awt.Color(100, 100, 100));
-        itemCong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PhepTinh/Add.png"))); // NOI18N
+        itemCong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Add.png"))); // NOI18N
         itemCong.setText("Phép cộng");
         itemCong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -50,7 +62,7 @@ public class PhepTinhForm extends javax.swing.JFrame {
         });
         phepTinh.add(itemCong);
 
-        itemTru.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PhepTinh/Minus.png"))); // NOI18N
+        itemTru.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Minus.png"))); // NOI18N
         itemTru.setText("Phép trừ");
         itemTru.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -59,7 +71,7 @@ public class PhepTinhForm extends javax.swing.JFrame {
         });
         phepTinh.add(itemTru);
 
-        itemNhan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PhepTinh/Multiplication.png"))); // NOI18N
+        itemNhan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Multiplication.png"))); // NOI18N
         itemNhan.setText("Phép nhân");
         itemNhan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,7 +80,7 @@ public class PhepTinhForm extends javax.swing.JFrame {
         });
         phepTinh.add(itemNhan);
 
-        itemChia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PhepTinh/Division.png"))); // NOI18N
+        itemChia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Division.png"))); // NOI18N
         itemChia.setText("Phép chia");
         itemChia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,9 +91,10 @@ public class PhepTinhForm extends javax.swing.JFrame {
 
         jMenuBar1.add(phepTinh);
 
-        jMenu4.setText("Tùy chỉnh");
+        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Account.png"))); // NOI18N
+        jMenu4.setText("Tài khoản");
 
-        itemThoat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PhepTinh/Fire Exit.png"))); // NOI18N
+        itemThoat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Fire Exit.png"))); // NOI18N
         itemThoat.setText("Thoát");
         itemThoat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,11 +111,21 @@ public class PhepTinhForm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 650, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(101, 101, 101)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(anhNen, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tieuDe))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 526, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(tieuDe)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(anhNen)
+                .addContainerGap(69, Short.MAX_VALUE))
         );
 
         pack();
@@ -110,16 +133,18 @@ public class PhepTinhForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void itemNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemNhanActionPerformed
-        // TODO add your handling code here:
+        new PhepNhan().setVisible(true);
         
     }//GEN-LAST:event_itemNhanActionPerformed
 
     private void itemChiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemChiaActionPerformed
         // TODO add your handling code here:
+        new PhepChia().setVisible(true);
     }//GEN-LAST:event_itemChiaActionPerformed
 
     private void itemTruActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemTruActionPerformed
         // TODO add your handling code here:
+        new PhepTru().setVisible(true);
     }//GEN-LAST:event_itemTruActionPerformed
 
     private void itemCongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemCongActionPerformed
@@ -168,6 +193,7 @@ public class PhepTinhForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel anhNen;
     private javax.swing.JMenuItem itemChia;
     private javax.swing.JMenuItem itemCong;
     private javax.swing.JMenuItem itemNhan;
@@ -176,5 +202,6 @@ public class PhepTinhForm extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu phepTinh;
+    private javax.swing.JLabel tieuDe;
     // End of variables declaration//GEN-END:variables
 }

@@ -8,12 +8,12 @@ package PhepTinh;
  *
  * @author tt
  */
-public class PhepCong extends javax.swing.JFrame {
+public class PhepChia extends javax.swing.JFrame {
 
     /**
      * Creates new form PhepCong
      */
-    public PhepCong() {
+    public PhepChia() {
         initComponents();
     }
 
@@ -31,7 +31,7 @@ public class PhepCong extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         textA = new javax.swing.JTextField();
         textB = new javax.swing.JTextField();
-        buttonCong = new javax.swing.JButton();
+        buttonChia = new javax.swing.JButton();
         textKQ = new javax.swing.JTextField();
         buttonNhapLai = new javax.swing.JButton();
         SoThu1 = new javax.swing.JLabel();
@@ -42,7 +42,7 @@ public class PhepCong extends javax.swing.JFrame {
         setTitle("PhepCong");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("PHÉP CỘNG HAI SỐ");
+        jLabel1.setText("PHÉP CHIA HAI SỐ");
         jLabel1.setToolTipText("");
         jLabel1.setAutoscrolls(true);
 
@@ -60,12 +60,12 @@ public class PhepCong extends javax.swing.JFrame {
             }
         });
 
-        buttonCong.setBackground(new java.awt.Color(66, 138, 255));
-        buttonCong.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        buttonCong.setText("Cộng");
-        buttonCong.addActionListener(new java.awt.event.ActionListener() {
+        buttonChia.setBackground(new java.awt.Color(66, 138, 255));
+        buttonChia.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        buttonChia.setText("Chia");
+        buttonChia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonCongActionPerformed(evt);
+                buttonChiaActionPerformed(evt);
             }
         });
 
@@ -91,20 +91,15 @@ public class PhepCong extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(textA))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(textB))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(textKQ)))
+                    .addComponent(textA, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(textB)
+                    .addComponent(textKQ))
                 .addContainerGap())
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addComponent(buttonCong, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonChia, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
                 .addComponent(buttonNhapLai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30))
@@ -120,7 +115,7 @@ public class PhepCong extends javax.swing.JFrame {
                 .addComponent(textKQ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(buttonCong, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                    .addComponent(buttonChia, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
                     .addComponent(buttonNhapLai, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
@@ -180,17 +175,17 @@ public class PhepCong extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonCongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCongActionPerformed
+    private void buttonChiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonChiaActionPerformed
         try {
         double num1 = Double.parseDouble(textA.getText());
         double num2 = Double.parseDouble(textB.getText());
-        double cong = num1 + num2;
-        textKQ.setText(String.valueOf(cong));
+        double chia = num1 / num2;
+        textKQ.setText(String.valueOf(chia));
     } catch (NumberFormatException e) {
         textKQ.setText("Nhập số không hợp lệ");
     }
         
-    }//GEN-LAST:event_buttonCongActionPerformed
+    }//GEN-LAST:event_buttonChiaActionPerformed
 
     private void buttonNhapLaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNhapLaiActionPerformed
          // TODO add your handling code here:
@@ -229,27 +224,34 @@ public class PhepCong extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PhepCong.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PhepChia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PhepCong.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PhepChia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PhepCong.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PhepChia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PhepCong.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PhepChia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PhepCong().setVisible(true);
+                new PhepChia().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel SoThu1;
-    private javax.swing.JButton buttonCong;
+    private javax.swing.JButton buttonChia;
     private javax.swing.JButton buttonNhapLai;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
