@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -15,12 +14,14 @@ public class Calculator extends JFrame implements ActionListener {
     private JButton divideButton;
 
     public Calculator() {
-        setTitle("Máy tính");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
-        add(createVerticalPanel());
-        pack();
-        setVisible(true);
+
+        JFrame frame = new JFrame("Calculator");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JPanel panel = createVerticalPanel();
+        frame.add(panel);
+        frame.setSize(300, 300);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
     }
 
     private JPanel createVerticalPanel() {
@@ -44,7 +45,6 @@ public class Calculator extends JFrame implements ActionListener {
         resultField.setEditable(false);
         panel.add(Box.createVerticalStrut(10));
 
-        // Thêm các nút với khoảng cách dọc giữa chúng
         panel.add(addButton = new JButton("Cộng"));
         panel.add(Box.createVerticalStrut(10));
 
