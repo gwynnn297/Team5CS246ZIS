@@ -3,99 +3,123 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Calculator extends JFrame implements ActionListener {
-
-    private JTextField num1Field;
-    private JTextField num2Field;
-    private JTextField num3Field;
-    private JTextField resultField;
-    private JButton addButton;
-    private JButton subtractButton;
-    private JButton multiplyButton;
-    private JButton divideButton;
+    private JMenuItem addMenuItem;
+    private JMenuItem subtractMenuItem;
+    private JMenuItem multiplyMenuItem;
+    private JMenuItem divideMenuItem;
 
     public Calculator() {
+        setTitle("Calculator");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        JFrame frame = new JFrame("Calculator");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JPanel panel = createVerticalPanel();
-        frame.add(panel);
-        frame.setSize(300, 300);
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
-    }
+        JMenuBar menuBar = new JMenuBar();
+        JMenu operationMenu = new JMenu("Phép tính");
+        setLocationRelativeTo(null);
 
-    private JPanel createVerticalPanel() {
-        JPanel panel = new JPanel();
-        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        addMenuItem = new JMenuItem("Cộng");
+        subtractMenuItem = new JMenuItem("Trừ");
+        multiplyMenuItem = new JMenuItem("Nhân");
+        divideMenuItem = new JMenuItem("Chia");
 
-        panel.add(new JLabel("Số thứ nhất : "));
-        panel.add(num1Field = new JTextField(20));
-        panel.add(Box.createVerticalStrut(10));
+        operationMenu.add(addMenuItem);
+        operationMenu.add(subtractMenuItem);
+        operationMenu.add(multiplyMenuItem);
+        operationMenu.add(divideMenuItem);
 
-        panel.add(new JLabel("Số thứ hai : "));
-        panel.add(num2Field = new JTextField(20));
-        panel.add(Box.createVerticalStrut(10));
+        menuBar.add(operationMenu);
+        setJMenuBar(menuBar);
 
-        panel.add(new JLabel("Số thứ ba : "));
-        panel.add(num3Field = new JTextField(20));
-        panel.add(Box.createVerticalStrut(10));
+        addMenuItem.addActionListener(this);
+        subtractMenuItem.addActionListener(this);
+        multiplyMenuItem.addActionListener(this);
+        divideMenuItem.addActionListener(this);
 
-        panel.add(new JLabel("Kết quả: "));
-        panel.add(resultField = new JTextField(20));
-        resultField.setEditable(false);
-        panel.add(Box.createVerticalStrut(10));
-
-        panel.add(addButton = new JButton("Cộng"));
-        panel.add(Box.createVerticalStrut(10));
-
-        panel.add(subtractButton = new JButton("Trừ"));
-        panel.add(Box.createVerticalStrut(10));
-
-        panel.add(multiplyButton = new JButton("Nhân"));
-        panel.add(Box.createVerticalStrut(10));
-
-        panel.add(divideButton = new JButton("Chia"));
-        panel.add(Box.createVerticalStrut(10));
-
-        addButton.addActionListener(this);
-        subtractButton.addActionListener(this);
-        multiplyButton.addActionListener(this);
-        divideButton.addActionListener(this);
-
-        return panel;
+        setSize(550, 400);
+        setLocationRelativeTo(null);
+        setVisible(true);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        double num1 = 0;
-        double num2 = 0;
-        double num3 = 0;
-        double result = 0;
-
-        try {
-            num1 = Double.parseDouble(num1Field.getText());
-            num2 = Double.parseDouble(num2Field.getText());
-            num3 = Double.parseDouble(num3Field.getText());
-        } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(null, "Hãy nhập một số", "Lỗi", JOptionPane.ERROR_MESSAGE);
-            return;
+        if (e.getSource() == addMenuItem) {
+            createOperationFrame("Cộng", "+");
+        } else if (e.getSource() == subtractMenuItem) {
+            createOperationFrame("Trừ", "-");
+        } else if (e.getSource() == multiplyMenuItem) {
+            createOperationFrame("Nhân", "*");
+        } else if (e.getSource() == divideMenuItem) {
+            createOperationFrame("Chia", "/");
         }
+    }
 
-        if (e.getSource() == addButton) {
-            result = num1 + num2 + num3;
-        } else if (e.getSource() == subtractButton) {
-            result = num1 - num2 - num3;
-        } else if (e.getSource() == multiplyButton) {
-            result = num1 * num2 * num3;
-        } else if (e.getSource() == divideButton) {
-            if (num2 == 0|| num3 == 0) {
-                JOptionPane.showMessageDialog(null, "Lỗi chia cho 0", "Lỗi", JOptionPane.ERROR_MESSAGE);
+    private void createOperationFrame(String title, String operation) {
+        JFrame operationFrame = new JFrame(title);
+        operationFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+        JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        ImageIcon image = new ImageIcon("logo.png");
+        getGraphics().drawImage(image.getImage(), 0, 0,550,400, null);
+
+
+        panel.add(new JLabel("Số thứ nhất:"));
+        JTextField num1Field = new JTextField(20);
+        panel.add(num1Field);
+        panel.add(Box.createVerticalStrut(10));
+
+        panel.add(new JLabel("Số thứ hai:"));
+        JTextField num2Field = new JTextField(20);
+        panel.add(num2Field);
+        panel.add(Box.createVerticalStrut(10));
+
+        panel.add(new JLabel("Kết quả:"));
+        JTextField resultField = new JTextField(20);
+        resultField.setEditable(false);
+        panel.add(resultField);
+        panel.add(Box.createVerticalStrut(10));
+
+        JButton calculateButton = new JButton("Tính");
+        panel.add(calculateButton);
+
+        calculateButton.addActionListener(event -> {
+            double num1 = 0;
+            double num2 = 0;
+            double result = 0;
+
+            try {
+                num1 = Double.parseDouble(num1Field.getText());
+                num2 = Double.parseDouble(num2Field.getText());
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(operationFrame, "Hãy nhập một số", "Lỗi", JOptionPane.ERROR_MESSAGE);
                 return;
             }
-            result = num1 / num2;
-        }
 
-        resultField.setText(String.valueOf(result));
+            switch (operation) {
+                case "+":
+                    result = num1 + num2;
+                    break;
+                case "-":
+                    result = num1 - num2;
+                    break;
+                case "*":
+                    result = num1 * num2;
+                    break;
+                case "/":
+                    if (num2 == 0) {
+                        JOptionPane.showMessageDialog(operationFrame, "Lỗi chia cho 0", "Lỗi", JOptionPane.ERROR_MESSAGE);
+                        return;
+                    }
+                    result = num1 / num2;
+                    break;
+            }
+
+            resultField.setText(String.valueOf(result));
+        });
+
+        operationFrame.add(panel);
+        operationFrame.setSize(300, 200);
+        operationFrame.setLocationRelativeTo(null);
+        operationFrame.setVisible(true);
     }
 
     public static void main(String[] args) {
