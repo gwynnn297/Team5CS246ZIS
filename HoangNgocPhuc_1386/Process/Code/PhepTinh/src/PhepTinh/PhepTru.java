@@ -11,7 +11,7 @@ package PhepTinh;
 public class PhepTru extends javax.swing.JFrame {
 
     /**
-     * Creates new form PhepCong
+     * Creates new form PhepTru
      */
     public PhepTru() {
         initComponents();
@@ -39,7 +39,7 @@ public class PhepTru extends javax.swing.JFrame {
         ketQua = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("PhepCong");
+        setTitle("Phép trừ");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("PHÉP TRỪ HAI SỐ");
@@ -177,22 +177,22 @@ public class PhepTru extends javax.swing.JFrame {
 
     private void buttonTruActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTruActionPerformed
         try {
-        double num1 = Double.parseDouble(textA.getText());
-        double num2 = Double.parseDouble(textB.getText());
-        double tru = num1 - num2;
-        textKQ.setText(String.valueOf(tru));
-    } catch (NumberFormatException e) {
-        textKQ.setText("Nhập số không hợp lệ");
-    }
-        
+            double num1 = Double.parseDouble(textA.getText());
+            double num2 = Double.parseDouble(textB.getText());
+            double tru = num1 - num2;
+            textKQ.setText(String.valueOf(tru));
+        } catch (NumberFormatException e) {
+            textKQ.setText("Nhập số không hợp lệ");
+        }
+
     }//GEN-LAST:event_buttonTruActionPerformed
 
     private void buttonNhapLaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNhapLaiActionPerformed
-         // TODO add your handling code here:
-            textA.setText("");
-            textB.setText("");
-            textKQ.setText("");
-            
+        // TODO add your handling code here:
+        textA.setText("");
+        textB.setText("");
+        textKQ.setText("");
+
     }//GEN-LAST:event_buttonNhapLaiActionPerformed
 
     private void textBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textBActionPerformed

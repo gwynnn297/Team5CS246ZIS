@@ -39,7 +39,7 @@ public class PhepChia extends javax.swing.JFrame {
         ketQua = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("PhepCong");
+        setTitle("Phép chia");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("PHÉP CHIA HAI SỐ");

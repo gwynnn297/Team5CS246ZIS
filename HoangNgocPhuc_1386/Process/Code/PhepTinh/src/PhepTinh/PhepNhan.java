@@ -39,7 +39,12 @@ public class PhepNhan extends javax.swing.JFrame {
         ketQua = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("PhepCong");
+        setTitle("Phép Nhân");
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentHidden(java.awt.event.ComponentEvent evt) {
+                formComponentHidden(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("PHÉP NHÂN HAI SỐ");
@@ -171,28 +176,30 @@ public class PhepNhan extends javax.swing.JFrame {
                 .addGap(58, 58, 58))
         );
 
+        getAccessibleContext().setAccessibleName("PhepNhan");
+
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNhanActionPerformed
         try {
-        double num1 = Double.parseDouble(textA.getText());
-        double num2 = Double.parseDouble(textB.getText());
-        double nhan = num1 * num2;
-        textKQ.setText(String.valueOf(nhan));
-    } catch (NumberFormatException e) {
-        textKQ.setText("Nhập số không hợp lệ");
-    }
-        
+            double num1 = Double.parseDouble(textA.getText());
+            double num2 = Double.parseDouble(textB.getText());
+            double nhan = num1 * num2;
+            textKQ.setText(String.valueOf(nhan));
+        } catch (NumberFormatException e) {
+            textKQ.setText("Nhập số không hợp lệ");
+        }
+
     }//GEN-LAST:event_buttonNhanActionPerformed
 
     private void buttonNhapLaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNhapLaiActionPerformed
-         // TODO add your handling code here:
-            textA.setText("");
-            textB.setText("");
-            textKQ.setText("");
-            
+        // TODO add your handling code here:
+        textA.setText("");
+        textB.setText("");
+        textKQ.setText("");
+
     }//GEN-LAST:event_buttonNhapLaiActionPerformed
 
     private void textBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textBActionPerformed
@@ -206,6 +213,10 @@ public class PhepNhan extends javax.swing.JFrame {
     private void textKQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textKQActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textKQActionPerformed
+
+    private void formComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentHidden
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formComponentHidden
 
     /**
      * @param args the command line arguments

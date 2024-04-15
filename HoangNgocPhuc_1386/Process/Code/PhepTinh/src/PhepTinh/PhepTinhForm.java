@@ -39,12 +39,14 @@ public class PhepTinhForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Phép Tính");
+        setLocation(new java.awt.Point(300, 300));
 
         anhNen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/logoDT-70.png"))); // NOI18N
 
         tieuDe.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
         tieuDe.setText("DUY TAN UNIVERSITY");
 
+        jMenuBar1.setLocation(new java.awt.Point(300, 300));
         jMenuBar1.setPreferredSize(new java.awt.Dimension(144, 40));
 
         phepTinh.setText("Phép tính");
@@ -116,7 +118,7 @@ public class PhepTinhForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(anhNen, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tieuDe))
-                .addContainerGap(101, Short.MAX_VALUE))
+                .addContainerGap(130, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
